@@ -51,3 +51,4 @@ class MainKayitOl : AppCompatActivity() {
         }
     }
 }
+// güncellenmiş kısmı burasıdır
