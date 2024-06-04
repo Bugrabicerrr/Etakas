@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ConstrainColor"
+    tools:context=".MainRapor">
+
+
+    <TextView
+        android:id="@+id/tex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="33dp"
+        android:text="Lütfen bakmak istediğiniz tarihleri seçin"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDateGelir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextDateGelir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="222dp"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="Başlangıç Tarihi Seçin"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDateGider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tex" />
+
+    <EditText
+        android:id="@+id/editTextDateGider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextDateGelir"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="222dp"
+        android:layout_marginBottom="100dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="Bitiş Tarihi Seçin"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/BTNsorgula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDateGelir" />
+
+    <Button
+        android:id="@+id/BTNsorgula"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="489dp"
+        android:background="#4F025C"
+
+        android:text="sorgula"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDateGider" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ConstrainColor"
+    tools:context=".MainGider">
+
+
+    <EditText
+        android:id="@+id/gidergiredittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/edittextarkaplan"
+        android:ems="10"
+        android:hint="Giderinizi Girin:"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/BTNGIDER"
+        app:layout_constraintEnd_toStartOf="@+id/spinner2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tex" />
+
+    <Button
+        android:id="@+id/BTNsfrgıder"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+
+        android:layout_marginStart="132dp"
+
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="16dp"
+        android:background="#4F025C"
+        android:text=" verileri sıfırla"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/BTNanasayfagıder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNgıdergır" />
+
+    <TextView
+        android:id="@+id/texx"
+        android:layout_width="360dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="14dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="8dp"
+        android:text="İlk başta gider türlerinizi sisteme giriniz lütfen"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/kategoriedittextd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNGIDER" />
+
+    <EditText
+        android:id="@+id/kategoriedittextd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="195dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittextarkaplan"
+        android:ems="10"
+        android:hint="Kategori Giriniz:"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/BTNgıdergır"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texx" />
+
+    <TextView
+        android:id="@+id/tex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="78dp"
+        android:text="Lütfen gider miktarınız ver türünü giriniz."
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/gidergiredittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BTNGIDER"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="271dp"
+        android:layout_marginBottom="8dp"
+        android:background="#4F025C"
+        android:onClick="giderEkleOnClick"
+        android:text="gider_ekle"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/texx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gidergiredittext" />
+
+    <Button
+        android:id="@+id/BTNanasayfagıder"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+
+        android:layout_marginStart="132dp"
+
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="100dp"
+        android:background="#4F025C"
+        android:text="Anasayfa"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNsfrgıder" />
+
+    <Button
+        android:id="@+id/BTNgıdergır"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+
+        android:layout_marginStart="53dp"
+
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="271dp"
+        android:background="#4F025C"
+        android:text="Gider Türlerinizi Giriniz"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/BTNsfrgıder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kategoriedittextd" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="134dp"
+        android:layout_height="21dp"
+
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="141dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/texx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tex" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

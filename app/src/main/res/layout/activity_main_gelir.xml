@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ConstrainColor"
+    tools:context=".MainGelir">
+
+
+    <EditText
+        android:id="@+id/gelirgiredittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/edittextarkaplan"
+        android:ems="10"
+        android:hint="Gelirinizi Girin:"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/BTNGELİREKLE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tex" />
+
+    <Button
+        android:id="@+id/BTNsfrgelır"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+
+        android:layout_marginStart="132dp"
+        android:layout_marginEnd="192dp"
+        android:background="#4F025C"
+
+        android:text=" verileri sıfırla"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginBottom="10dp"
+        android:text="Lütfen gelir miktarınızı giriniz."
+
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/gelirgiredittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BTNGELİREKLE"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="11dp"
+        android:background="#4F025C"
+
+        android:text="gelir ekle"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/BTNsfrgelır"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gelirgiredittext" />
+
+    <Button
+        android:id="@+id/BTNanasayfagelır"
+        android:layout_width="124dp"
+        android:layout_height="72dp"
+
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="339dp"
+        android:background="#4F025C"
+
+        android:text="Anasayfa"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNsfrgelır" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
