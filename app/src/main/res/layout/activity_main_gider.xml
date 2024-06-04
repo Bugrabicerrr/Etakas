@@ -141,23 +141,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BTNsfrgıder" />
 
-    <Button
-        android:id="@+id/BTNgıdergır"
-        android:layout_width="124dp"
-        android:layout_height="72dp"
-
-        android:layout_marginStart="53dp"
-
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="271dp"
-        android:background="#4F025C"
-        android:text="Gider Türlerinizi Giriniz"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/BTNsfrgıder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kategoriedittextd" />
 
     <Spinner
         android:id="@+id/spinner2"
