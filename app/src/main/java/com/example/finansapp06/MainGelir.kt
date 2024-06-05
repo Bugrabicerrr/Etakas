@@ -7,13 +7,14 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.finansapp06.databinding.ActivityMainGelirBinding
+import java.text.SimpleDateFormat
 import java.util.Date
-
-
+import java.util.Locale
 
 class MainGelir : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainGelirBinding
+    private lateinit var databaseHelper: DatabaseHelper
     private lateinit var database: SQLiteDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,34 +22,25 @@ class MainGelir : AppCompatActivity() {
         binding = ActivityMainGelirBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Veritabanını
-        database = this.openOrCreateDatabase("FinansAppDB", MODE_PRIVATE, null)
-        database.execSQL("CREATE TABLE IF NOT EXISTS gelir (gelir_id INTEGER PRIMARY KEY, gelir_miktar INTEGER, tarih TIMESTAMP DEFAULT CURRENT_TIMESTAMP)")
-        database.execSQL("CREATE TABLE IF NOT EXISTS gider (gider_id INTEGER PRIMARY KEY, gider_miktar INTEGER, giderturu TEXT, tarih TIMESTAMP DEFAULT CURRENT_TIMESTAMP)")
+        databaseHelper = DatabaseHelper(this)
+        database = databaseHelper.writableDatabase
 
-        // Gelir Ekle
         binding.BTNGELREKLE.setOnClickListener {
             val gelirMiktari = binding.gelirgiredittext.text.toString().toIntOrNull()
-            if (gelirMiktari != null ) {
-                // Veritabanına kaydetme
+            if (gelirMiktari != null) {
                 kaydetGelir(gelirMiktari)
-                // Kullanıcıya bilgi ver
                 Toast.makeText(this, "Gelir kaydedildi", Toast.LENGTH_SHORT).show()
+                binding.gelirgiredittext.text.clear() // Giriş alanını temizle
             } else {
-                // Hata işleme
                 binding.gelirgiredittext.error = "Geçerli bir miktar girin (pozitif bir sayı)"
             }
         }
 
-        // Sıfırla butonuna
         binding.BTNsfrgelR.setOnClickListener {
-            // Gelir tablosunu sıfırla
             database.execSQL("DELETE FROM gelir")
-            // Kullanıcıya bilgi ver
-            Toast.makeText(this, "Veriler sıfırlandı", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Gelir verileri sıfırlandı", Toast.LENGTH_SHORT).show()
         }
 
-        // Anasayfa butonuna
         binding.BTNanasayfagelR.setOnClickListener {
             val intent = Intent(this, MainAnasayfa::class.java)
             startActivity(intent)
@@ -56,15 +48,18 @@ class MainGelir : AppCompatActivity() {
     }
 
     private fun kaydetGelir(miktar: Int) {
-        val tarih = Date()
+        val tarih = getCurrentDate()
 
         val values = ContentValues().apply {
             put("gelir_miktar", miktar)
-            put("tarih", tarih.time) // Milisaniye cinsinden zamanı kaydet
+            put("tarih", tarih)
         }
 
+        database.insert("gelir", null, values)
+    }
 
-
-    database.insert("gelir", null, values)
+    private fun getCurrentDate(): String {
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        return dateFormat.format(Date())
     }
 }
